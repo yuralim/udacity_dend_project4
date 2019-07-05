@@ -106,5 +106,7 @@ venv.bak/
 # AWS configuration
 dl.cfg
 
-# Data
+# Test Data
 data/
+output/
+Test*.ipynb
