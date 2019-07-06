@@ -20,6 +20,9 @@ logging.basicConfig(
 logger = logging.getLogger('pyspark_etl')
 
 def create_spark_session():
+    """
+    Create a spark session
+    """
     spark = SparkSession \
         .builder \
         .config("spark.jars.packages", "org.apache.hadoop:hadoop-aws:2.7.0") \
@@ -28,6 +31,10 @@ def create_spark_session():
 
 
 def process_song_data(spark, input_data, output_data):
+    """
+    Extract song and artist information from song data and save them to S3.
+    """
+
     # get filepath to song data file
     song_data = "song_data/*/*/*/*.json"
     
@@ -82,6 +89,10 @@ def process_song_data(spark, input_data, output_data):
 
 
 def process_log_data(spark, input_data, output_data):
+    """
+    Extract user, time, and songplay information from log data and save them to S3.
+    """
+
     # get filepath to log data file
     log_data = "log_data/*/*/*.json"
 
